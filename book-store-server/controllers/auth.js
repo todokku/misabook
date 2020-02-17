@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const { registerValidation, loginValidate } = require('../validations/auth')
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
     // Validate data send to server
@@ -34,4 +35,27 @@ const register = async (req, res) => {
     }
 }
 
-module.exports = { register }
+const login = async (req, res) => {
+    // Validate data post to server
+    const { errors } = loginValidate(req.body);
+
+    if (errors)
+        return res.send({ message: errors });
+
+    // Checking email exists
+    const user = await User.findOne({ email: req.body.email });
+    if (!user)
+        return res.send({ message: `Email doesn't exist` });
+
+    // Checking password is correct
+    const validatePass = await bcrypt.compare(req.body.password, user.password);
+    if (!validatePass)
+        return res.send({ message: 'Invalid password' });
+
+    // Create and assign a token
+    const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+    res.header('token', token).send(token);
+    res.send('Login successfully');
+}
+
+module.exports = { register, login };

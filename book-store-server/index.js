@@ -31,7 +31,9 @@ mongoose.connect(url, mongoOptions, () => {
 });
 
 // Import routes
+const authRoute = require('./routes/auth');
 const bookRoute = require('./routes/book');
 
 // Routes
+app.use('/auth', authRoute)
 app.use('/books', bookRoute);
