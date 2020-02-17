@@ -30,10 +30,13 @@ mongoose.connect(url, mongoOptions, () => {
     console.log('Connected to the database!');
 });
 
+// Import validating middlewares
+const tokenVerify = require('./middlewares/tokenVerify');
+
 // Import routes
 const authRoute = require('./routes/auth');
 const bookRoute = require('./routes/book');
 
 // Routes
 app.use('/auth', authRoute)
-app.use('/books', bookRoute);
+app.use('/books', tokenVerify, bookRoute);

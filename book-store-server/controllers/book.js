@@ -5,7 +5,7 @@ const bookValidation = require('../validations/book');
 const getAllBooks = async (req, res) => {
     try {
         const books = await Book.find({});
-        res.send(json(books));
+        res.send(books);
     }
     catch(error) {
         res.send({ message: error });

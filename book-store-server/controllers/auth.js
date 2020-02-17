@@ -54,8 +54,29 @@ const login = async (req, res) => {
 
     // Create and assign a token
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-    res.header('token', token).send(token);
-    res.send('Login successfully');
+    res.send({ token: token, message: 'Login successfully' });
+}
+
+const getUser = async (req, res) => {
+    const token = req.body.token;
+    if (!token)
+        return res.send({ message: 'Access denied' });
+    try {
+        const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+        
+        if (!verified)
+            return res.send({ message: 'Access token' });
+        
+        const user = await User.findOne({ _id: verified._id });
+        
+        if (!user)
+            return res.send({ message: 'Access token' });
+        
+        return res.send({ message: 'Successfully' })
+    }
+    catch(error) {
+        res.send({ message: 'Invalid token' });
+    }
 }
 
 module.exports = { register, login };
