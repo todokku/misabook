@@ -29,3 +29,9 @@ const mongoOptions = {
 mongoose.connect(url, mongoOptions, () => {
     console.log('Connected to the database!');
 });
+
+// Import routes
+const bookRoute = require('./routes/book');
+
+// Routes
+app.use('/books', bookRoute);
