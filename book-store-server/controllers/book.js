@@ -16,6 +16,7 @@ const getAllBooks = async (req, res) => {
 const insertBooks = async (req, res) => {
     const newBooks = req.body;
 
+    // Validate data post to server
     const { errors } = bookValidation(newBooks);
     if (errors)
         return res.send({ message: errors });

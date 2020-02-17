@@ -7,7 +7,9 @@ const bookValidation = (data) => {
         price: joi.string().required(),
         cover: joi.string(),
         view_count: joi.number()
-    })
+    });
+    
+    return schema.validate(data);
 }
 
 module.exports = bookValidation;
