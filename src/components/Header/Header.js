@@ -48,7 +48,7 @@ const Header = (props) => {
                         <Link to='/' onClick={closeMenu}>Home</Link>
                     </li>
                     <li className='nav-link'>
-                        <Link to='/products' onClick={closeMenu}>Products</Link>
+                        <Link to='/books' onClick={closeMenu}>Books</Link>
                     </li>
                     <li className='nav-link'>
                         <Link to='/about' onClick={closeMenu}>About</Link>
