@@ -34,6 +34,7 @@
     background-color: black;
     margin: 2px 0;
     transition: all 200ms;
+    border-radius: 10px;
 }
 
 .Header .burger-clicked #line-1 {
@@ -108,9 +109,11 @@
     }
 
     .Header #nav-links {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: white;
         z-index: 3;
         position: absolute;
-        height: 88vh;
+        height: 87.8vh;
         width: 100vw;
         flex-direction: column;
         top: 12vh;

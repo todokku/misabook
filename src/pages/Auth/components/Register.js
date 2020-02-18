@@ -20,11 +20,11 @@ const Register = (props) => {
                 </div>
                 <div className='form-control'>
                     <label htmlFor="password">Password</label>
-                    <input type="text" id='pasword' placeholder='password...' required />
+                    <input type="password" id='password' placeholder='password...' required />
                 </div>
                 <div className='form-control'>
                     <label htmlFor="re-password">Confirm password</label>
-                    <input type="text" id='re-password' placeholder='confirm password...' required />
+                    <input type="password" id='re-password' placeholder='confirm password...' required />
                 </div>
                 <button>Register</button>
                 <p>Had an account? <span onClick={props.swithAuth}>Login</span></p>

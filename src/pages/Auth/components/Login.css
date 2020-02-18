@@ -47,6 +47,18 @@
     color: #313131;
 }
 
+.Login .form-control .error-login {
+    color: red;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.Login .form-control .error-login-showed {
+    display: block;
+}
+
 .Login button {
     margin: 1.5rem 0 0.5rem 0;
     align-self: center;

@@ -8,16 +8,18 @@ const AuthRoute = (props) => {
     // eslint-disable-next-line
     const [token, setToken] = useContext(AuthContext);
 
-    const savedToken = localStorage.getItem('token');
-
     useEffect(() => {
+        let savedToken = localStorage.getItem('token');
+
         if (!savedToken) {
+            setToken('');
             props.history.push('/auth');
         }
         else {
-            axios.get('http://localhost:5000/auth/user', { token: savedToken })
+            axios.post('http://localhost:5000/auth/user', {
+                token: savedToken
+            })
             .then((res) => {
-                console.log(res.data);
                 if (res.data.message !== 'Successfully') {
                     localStorage.removeItem('token')
                     props.history.push('/auth');
@@ -27,17 +29,14 @@ const AuthRoute = (props) => {
                 }
             })
         }
-    }, [savedToken, setToken, props.history]);
+    }, [setToken, props.history]);
 
-    if (token === '')
-        return (
-            <div></div>
-        );
-    else {
-        return (
-            props.children
-        );
-    }
+    return (
+        <div className='AuthRoute'>
+            {token !== '' && props.children}
+            {token === '' && null}
+        </div>
+    )
 }
 
 export default withRouter(AuthRoute);

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import { AuthContext } from '../../context/AuthContext';
 
@@ -8,8 +8,7 @@ import logo from '../../assets/logo.png';
 
 import './Header.css';
 
-const Header = () => {
-    // eslint-disable-next-line
+const Header = (props) => {
     const [token, setToken] = useContext(AuthContext);
 
     const [showed, setShowed] = useState(false);
@@ -20,6 +19,12 @@ const Header = () => {
 
     const closeMenu = () => {
         setShowed(false);
+    }
+
+    const logout = () => {
+        localStorage.removeItem('token');
+        setToken('');
+        props.history.push('/auth');
     }
 
     return (
@@ -59,7 +64,9 @@ const Header = () => {
                         <i id='cart' className="material-icons">shopping_cart</i>
                     </Link>
                     <div>
-                        <i id='user' className="material-icons">exit_to_app</i>
+                        <i id='user' className="material-icons"
+                            onClick={logout}
+                        >exit_to_app</i>
                     </div>
                     <div id='burger'
                         className={classnames('', {
@@ -77,4 +84,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default withRouter(Header);
