@@ -1,0 +1,22 @@
+.Footer {
+    background-color: white;
+    height: 7vh;
+    color: #313131;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .Footer {
+        height: 10vh;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Footer > div {
+        margin: 0.25rem 0;
+    }
+}

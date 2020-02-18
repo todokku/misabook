@@ -1,0 +1,76 @@
+.Register {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+    box-shadow: 0px 0px 33px 8px rgba(0,0,0,0.75);
+    transform: translateY(-999px);
+    position: absolute;
+    transition: transform 800ms ease;
+}
+
+.Register.Register-show {
+    transform: translateY(0px);
+}
+
+.Register form {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Register h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    user-select: none;
+}
+
+.Register .form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0.5rem;
+}
+
+.Register .form-control label {
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    user-select: none;
+}
+
+.Register .form-control input {
+    height: 1.8rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    padding: 0.1rem 1rem;
+    font-size: 1rem;
+    color: #313131;
+}
+
+.Register button {
+    margin: 1.5rem 0 0.5rem 0;
+    align-self: center;
+    width: 95%;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    background-color: rgba(0, 119, 255, 0.76);
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.Register p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
+    user-select: none;
+}
+
+.Register p > span {
+    cursor: pointer;
+    text-decoration: underline;
+}
