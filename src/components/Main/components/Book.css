@@ -1,0 +1,134 @@
+.Book a {
+    text-decoration: none;
+    color: black;
+}
+
+.Book .book-cover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    
+    background-position: center;
+}
+
+.Book {
+    width: 20%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    margin: 0 0.5rem 2rem 0.5rem;
+}
+
+.Book .book-cover {
+    min-height: 550px;
+}
+
+.Book .book-name {
+    font-size: 1.25rem;
+    margin: 1rem 1rem 0 1rem;
+    height: 60px;
+}
+
+.Book .book-price {
+    color: red;
+    font-size: 1.25rem;
+    margin: 1rem 0 1rem 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .Book {
+        width: 30%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 500px;
+    }
+
+    .Book .book-name {
+        font-size: 1.25rem;
+        margin: 1rem 1rem 0 1rem;
+        height: 60px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.25rem;
+        margin: 1rem 0 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Book {
+        width: 30%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 400px;
+    }
+
+    .Book .book-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem 0 1rem;
+        height: 50px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.2rem;
+        margin: 0 0 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Book {
+        width: 45%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 360px;
+    }
+
+    .Book .book-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem 0 1rem;
+        height: 50px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.2rem;
+        margin: 0 0 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Book {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 500px;
+    }
+
+    .Book .book-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 2rem 0 1rem;
+        height: 50px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.2rem;
+        margin: 1rem 0 1rem 1rem;
+    }
+}
