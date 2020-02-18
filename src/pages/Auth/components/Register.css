@@ -49,6 +49,18 @@
     color: #313131;
 }
 
+.Register .form-control .error-register {
+    color: red;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.Register .form-control .error-register-showed {
+    display: block;
+}
+
 .Register button {
     margin: 1.5rem 0 0.5rem 0;
     align-self: center;

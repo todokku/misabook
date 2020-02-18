@@ -23,7 +23,7 @@
 
 @media screen and (max-height: 680px) {
     .Auth {
-        min-height: 100vh;
+        min-height: 680px;
     }
 }
 
