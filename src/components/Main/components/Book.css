@@ -6,8 +6,9 @@
 .Book .book-cover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background-size: cover;
-    
+    position: relative;
     background-position: center;
+    height: 450px;
 }
 
 .Book {
@@ -15,10 +16,6 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.25rem;
     margin: 0 0.5rem 2rem 0.5rem;
-}
-
-.Book .book-cover {
-    min-height: 550px;
 }
 
 .Book .book-name {
@@ -30,7 +27,33 @@
 .Book .book-price {
     color: red;
     font-size: 1.25rem;
-    margin: 1rem 0 1rem 1rem;
+}
+
+.Book .cart-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.Book .cart-wrapper button {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.3rem;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    transition: background-color 200ms;
+}
+
+.Book .cart-wrapper button:hover {
+    background-color: #c42030;
 }
 
 @media screen and (max-width: 1200px) {
@@ -38,7 +61,6 @@
         width: 30%;
         border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 0.25rem;
-        margin: 0 0.5rem 2rem 0.5rem;
     }
 
     .Book .book-cover {
@@ -54,7 +76,6 @@
     .Book .book-price {
         color: red;
         font-size: 1.25rem;
-        margin: 1rem 0 1rem 1rem;
     }
 }
 
@@ -79,7 +100,6 @@
     .Book .book-price {
         color: red;
         font-size: 1.2rem;
-        margin: 0 0 1rem 1rem;
     }
 }
 
@@ -104,7 +124,6 @@
     .Book .book-price {
         color: red;
         font-size: 1.2rem;
-        margin: 0 0 1rem 1rem;
     }
 }
 
@@ -129,6 +148,15 @@
     .Book .book-price {
         color: red;
         font-size: 1.2rem;
-        margin: 1rem 0 1rem 1rem;
+    }
+}
+
+@keyframes addToCardHover {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
