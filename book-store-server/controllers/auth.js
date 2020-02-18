@@ -57,7 +57,7 @@ const login = async (req, res) => {
     res.send({ token: token, message: 'Login successfully' });
 }
 
-const getUser = async (req, res) => {
+const user = async (req, res) => {
     const token = req.body.token;
     if (!token)
         return res.send({ message: 'Access denied' });
@@ -79,4 +79,4 @@ const getUser = async (req, res) => {
     }
 }
 
-module.exports = { register, login, getUser };
+module.exports = { register, login, user };

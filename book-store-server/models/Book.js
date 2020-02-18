@@ -5,6 +5,11 @@ const BookSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    cover: {
+        type: String,
+        required: true,
+        default: 'https://res.cloudinary.com/dumfvnj9f/image/upload/v1581948108/bookstore/thumbnail_Image_jmwwre.jpg'
+    },
     author: {
         type: String,
         required: true,
@@ -14,10 +19,9 @@ const BookSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    cover: {
+    description: {
         type: String,
-        required: true,
-        default: 'https://res.cloudinary.com/dumfvnj9f/image/upload/v1581948108/bookstore/thumbnail_Image_jmwwre.jpg'
+        required: true
     },
     view_count: {
         type: Number,
