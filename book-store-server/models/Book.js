@@ -23,7 +23,7 @@ const BookSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    view_count: {
+    seller: {
         type: Number,
         required: true,
         default: 0
