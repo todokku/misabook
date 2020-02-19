@@ -9,7 +9,7 @@ import './BookViewer.css';
 const BookViewer = (props) => {
     // eslint-disable-next-line
     const [token, setToken] = useContext(AuthContext);
-    const { items, addToCart } = useContext(CartContext);
+    const { items, addToCart, removeFromCart } = useContext(CartContext);
 
     const [book, setBook] = useState({});
 
@@ -51,9 +51,13 @@ const BookViewer = (props) => {
                         </button>
                     )}
                     {items[0].includes(book._id) && (
-                        <button className='btn-add-to-cart btn-added'>
-                            <i className="material-icons">done</i>
-                            <div>Added to cart</div>
+                        <button className='btn-add-to-cart btn-added'
+                            onClick={() => {
+                                removeFromCart(book._id)
+                            }}
+                        >
+                            <i className="material-icons">remove_shopping_cart</i>
+                            <div>Remove from cart</div>
                         </button>
                     )}
                 </div>

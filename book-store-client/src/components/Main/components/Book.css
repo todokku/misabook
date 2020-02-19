@@ -56,6 +56,7 @@
     display: flex;
     outline: none;
     transition: all 200ms;
+    animation: btn-added 200ms;
     user-select: none;
 }
 
@@ -63,7 +64,7 @@
     background-color: #28a745!important;
     border: 1px solid #28a745;
     animation: btn-added 200ms;
-    pointer-events: none;
+    user-select: none;
 }
 
 @media screen and (min-width: 769px) {

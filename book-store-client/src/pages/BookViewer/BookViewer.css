@@ -67,13 +67,14 @@
     font-size: 0.9rem;
     user-select: none;
     transition: all 200ms;
+    animation: btn-added 200ms;
 }
 
 .BookViewer .btn-added {
     background-color: #28a745;
     border: 1px solid #28a745;
     animation: btn-added 200ms;
-    pointer-events: none;
+    user-select: none;
 }
 
 .BookViewer .description {

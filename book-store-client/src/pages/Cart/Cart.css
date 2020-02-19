@@ -1,0 +1,9 @@
+.Cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Cart .title {
+    font-size: 2rem;
+}

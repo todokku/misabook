@@ -23,7 +23,9 @@ const CartProvider = (props) => {
 
     const removeFromCart = (id) => {
         let newItems = items;
-        newItems.splice(newItems.indexOf(id), 1);
+        let index = items.indexOf(id);
+        newItems = newItems.filter((_, i) => i !== index)
+        localStorage.setItem('items', JSON.stringify(newItems));
         setItems(newItems);
     }
 

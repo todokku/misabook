@@ -6,7 +6,7 @@ import { CartContext } from '../../../context/CartContext';
 import './Book.css';
 
 const Book = (props) => {    
-    const { items, addToCart } = useContext(CartContext);
+    const { items, addToCart, removeFromCart } = useContext(CartContext);
 
     return (
         <div className='Book'>
@@ -35,11 +35,15 @@ const Book = (props) => {
                         </button>
                     )}
                     {items[0].includes(props.book._id) && (
-                        <button className='btn-added'>
+                        <button className='btn-added'
+                            onClick={() => {
+                                removeFromCart(props.book._id);
+                            }}
+                        >
                             <div>
-                                <i className="material-icons">done</i>
+                                <i className="material-icons">remove_shopping_cart</i>
                             </div>
-                            <div>Added to cart</div>
+                            <div>Remove from cart</div>
                         </button>
                     )}
                 </div>
