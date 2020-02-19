@@ -14,14 +14,13 @@ const Home = () => {
     const [bestSeller, setBestSeller] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/books/best-seller', {
+        axios.get('/books/best-seller', {
             headers: {
                 token: token//the token is a variable which holds the token
             }
         })
         .then((res) => {
             setBestSeller(res.data);
-            console.log(res.data)
         })
     }, [token]);
 

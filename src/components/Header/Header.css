@@ -5,7 +5,7 @@
     padding: 0 1rem;
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    z-index: 5;
+    z-index: 6;
     background-color: white;
 }
 
@@ -87,8 +87,30 @@
     padding-right: 1rem;
 }
 
+.Header #cart-wrapper {
+    position: relative;
+}
+
 .Header #cart {
     font-size: 1.9rem;
+}
+
+.Header #cart-count {
+    min-width: 1rem;
+    height: 1rem;
+    background-color: red;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    user-select: none;
 }
 
 .Header #user {

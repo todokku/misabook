@@ -16,7 +16,7 @@ const AuthRoute = (props) => {
             props.history.push('/auth');
         }
         else {
-            axios.post('http://localhost:5000/auth/user', {
+            axios.post('/auth/user', {
                 token: savedToken
             })
             .then((res) => {

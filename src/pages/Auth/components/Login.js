@@ -26,7 +26,7 @@ const Login = (props) => {
         setEmailError(false);
         setPasswordError(false);
 
-        axios.post('http://localhost:5000/auth/login', {
+        axios.post('/auth/login', {
             email: email,
             password: password
         })

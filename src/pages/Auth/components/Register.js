@@ -68,7 +68,7 @@ const Register = (props) => {
         }
 
         if (errors === 0) {
-            axios.post('http://localhost:5000/auth/register', {
+            axios.post('/auth/register', {
                 name: name,
                 email: email,
                 password: password

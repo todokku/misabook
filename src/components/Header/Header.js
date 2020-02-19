@@ -60,8 +60,9 @@ const Header = (props) => {
             }
             {token !== '' &&
                 <div id='function-wrapper'>
-                    <Link to='/cart'>
+                    <Link to='/cart' id='cart-wrapper'>
                         <i id='cart' className="material-icons">shopping_cart</i>
+                        <div id='cart-count'>0</div>
                     </Link>
                     <div>
                         <i id='user' className="material-icons"
