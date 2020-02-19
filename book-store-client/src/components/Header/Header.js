@@ -1,14 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import classnames from 'classnames';
 import { Link, withRouter } from 'react-router-dom';
 
 import { AuthContext } from '../../context/AuthContext';
+import { CartContext } from '../../context/CartContext';
 
 import logo from '../../assets/logo.png';
 
 import './Header.css';
 
 const Header = (props) => {
+    const { items } = useContext(CartContext);
     const [token, setToken] = useContext(AuthContext);
 
     const [showed, setShowed] = useState(false);
@@ -62,7 +64,7 @@ const Header = (props) => {
                 <div id='function-wrapper'>
                     <Link to='/cart' id='cart-wrapper'>
                         <i id='cart' className="material-icons">shopping_cart</i>
-                        <div id='cart-count'>0</div>
+                        <div id='cart-count'>{items[0].length}</div>
                     </Link>
                     <div>
                         <i id='user' className="material-icons"

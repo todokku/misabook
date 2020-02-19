@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { CartContext } from '../../../context/CartContext';
 
 import './Book.css';
 
-const Book = (props) => {
+const Book = (props) => {    
+    const { items, addToCart } = useContext(CartContext);
+
     return (
         <div className='Book'>
             <Link className='book-cover-link' to={`/books/${props.book._id}`}
@@ -20,12 +24,24 @@ const Book = (props) => {
                 </Link>
                 <div className='cart-wrapper'>
                     <h5 className='book-price'>{`${props.book.price} $`}</h5>
-                    <button>
-                        <div>
-                            <i className="material-icons">add_shopping_cart</i>
-                        </div>
-                        <div>Add to cart</div>
-                    </button>
+                    {!items[0].includes(props.book._id) && (
+                        <button onClick={() => {
+                            addToCart(props.book._id)
+                        }}>
+                            <div>
+                                <i className="material-icons">add_shopping_cart</i>
+                            </div>
+                            <div>Add to cart</div>
+                        </button>
+                    )}
+                    {items[0].includes(props.book._id) && (
+                        <button>
+                            <div>
+                                <i className="material-icons">done</i>
+                            </div>
+                            <div>Added to cart</div>
+                        </button>
+                    )}
                 </div>
             </div>
         </div>

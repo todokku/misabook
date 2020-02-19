@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 
 import AuthRoute from './auth/AuthRoute';
 import Header from './components/Header/Header';
@@ -19,14 +20,16 @@ const App = () => {
     <Router>
       <AuthProvider>
         <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path='/auth' component={Auth}/>
-            <AuthRoute path='/'>
-              <Main />
-            </AuthRoute>
-          </Switch>
-          <Footer />
+          <CartProvider>
+            <Header />
+            <Switch>
+              <Route exact path='/auth' component={Auth}/>
+              <AuthRoute path='/'>
+                <Main />
+              </AuthRoute>
+            </Switch>
+            <Footer />
+          </CartProvider>
         </div>
       </AuthProvider>
     </Router>
