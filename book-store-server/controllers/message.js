@@ -1,0 +1,26 @@
+const Message = require('../models/Message');
+const messageValidation = require('../validations/message');
+
+// Insert one or many books into the database
+const saveMessage = async (req, res) => {
+    const newMessage = req.body;
+
+    // Validate data post to server
+    const { errors } = messageValidation(newMessage);
+    if (errors)
+        return res.send({ message: errors });
+
+    try {
+        await Message.insertMany(newMessage, (err, savedMessage) => {
+            if (err)
+                throw err;
+            else
+                res.send(savedMessage);
+        });
+    }
+    catch(error) {
+        res.send({ message: error })
+    }
+}
+
+module.exports = { saveMessage }

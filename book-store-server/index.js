@@ -38,7 +38,9 @@ const tokenVerify = require('./middlewares/tokenVerify');
 // Import routes
 const authRoute = require('./routes/auth');
 const bookRoute = require('./routes/book');
+const messageRoute = require('./routes/message');
 
 // Routes
 app.use('/auth', authRoute)
 app.use('/books', tokenVerify, bookRoute);
+app.use('/message', tokenVerify, messageRoute);
