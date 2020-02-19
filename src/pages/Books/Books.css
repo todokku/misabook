@@ -1,0 +1,44 @@
+.Books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Books h3 {
+    text-align: center;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.Books .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .Books .content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Books .content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Books .content {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Book {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin-bottom: 2rem;
+    }    
+}
