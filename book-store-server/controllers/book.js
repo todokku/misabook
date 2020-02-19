@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Book = require('../models/Book');
 const bookValidation = require('../validations/book');
 
@@ -77,4 +78,20 @@ const viewBook = async (req, res) => {
     }
 }
 
-module.exports = { getAllBooks, insertBooks, bestSeller, booksPagination, viewBook }
+const getByIds = async (req, res) => {
+    const ids = req.body.items;
+    let o_ids = [];
+    for (let i = 0; i < ids.length; i++) {
+        let o_id = mongoose.Types.ObjectId(ids[i]);
+        o_ids.push(o_id);
+    }
+    try {
+        const books = await Book.find({ _id: { $in: o_ids } });
+        res.send(books);
+    }
+    catch(error) {
+        res.send({ message: error });
+    }
+}
+
+module.exports = { getAllBooks, insertBooks, bestSeller, booksPagination, viewBook, getByIds }
