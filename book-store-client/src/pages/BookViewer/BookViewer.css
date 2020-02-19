@@ -73,8 +73,14 @@
 .BookViewer .btn-added {
     background-color: #28a745;
     border: 1px solid #28a745;
+    transition: all 200ms;
     animation: btn-added 200ms;
     user-select: none;
+}
+
+.BookViewer .btn-added:hover {
+    background-color: #179434!important;
+    border: 1px solid #179434!important;
 }
 
 .BookViewer .description {
