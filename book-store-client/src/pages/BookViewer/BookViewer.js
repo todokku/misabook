@@ -2,12 +2,14 @@ import React, { useEffect, useContext, useState } from 'react';
 import axios from 'axios';
 
 import { AuthContext } from '../../context/AuthContext';
+import { CartContext } from '../../context/CartContext';
 
 import './BookViewer.css';
 
 const BookViewer = (props) => {
     // eslint-disable-next-line
     const [token, setToken] = useContext(AuthContext);
+    const { items, addToCart } = useContext(CartContext);
 
     const [book, setBook] = useState({});
 
@@ -38,10 +40,22 @@ const BookViewer = (props) => {
                         <li>Prestige</li>
                         <li>High quality</li>
                     </ul>
-                    <button className='btn-add-to-cart'>
-                        <i className="material-icons">add_shopping_cart</i>
-                        <div>Add to cart</div>
-                    </button>
+                    {!items[0].includes(book._id) && (
+                        <button className='btn-add-to-cart'
+                            onClick={() => {
+                                addToCart(book._id)
+                            }}
+                        >
+                            <i className="material-icons">add_shopping_cart</i>
+                            <div>Add to cart</div>
+                        </button>
+                    )}
+                    {items[0].includes(book._id) && (
+                        <button className='btn-add-to-cart btn-added'>
+                            <i className="material-icons">done</i>
+                            <div>Added to cart</div>
+                        </button>
+                    )}
                 </div>
             </div>
             <div className='description-wrapper'>

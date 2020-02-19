@@ -35,7 +35,7 @@ const Book = (props) => {
                         </button>
                     )}
                     {items[0].includes(props.book._id) && (
-                        <button>
+                        <button className='btn-added'>
                             <div>
                                 <i className="material-icons">done</i>
                             </div>
