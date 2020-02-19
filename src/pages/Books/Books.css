@@ -1,0 +1,116 @@
+.Books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Books h3 {
+    text-align: center;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.Books .books-selector {
+    align-self: flex-end;
+    margin-right: 8.5%;
+    margin-bottom: 2rem;
+}
+
+.Books .books-selector .title {
+    margin-right: 0.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.Books .books-selector select {
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Books .books-selector #field {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.Books .books-selector #sort {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-left: none;
+}
+
+.Books .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Books .load-more {
+    margin-bottom: 2rem;
+}
+
+.Books .load-more button {
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: white;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    transition: all 200ms;
+}
+
+@media screen and (max-width: 1200px) {
+    .Books .books-selector {
+        margin-right: 3.5%;
+    }
+
+    .Books .content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Books .books-selector {
+        margin-right: 3.5%;
+    }
+
+    .Books .content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Books .books-selector {
+        margin-right: 5.7%;
+    }
+
+    .Books .content {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Books .books-selector {
+        align-self: center;
+        margin-right: 0;
+    }
+
+    .Book {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin-bottom: 2rem;
+    }    
+}
+
+@media screen and (min-width: 769px) {
+    .Books .load-more button:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 1px solid transparent;
+    }
+}

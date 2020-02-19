@@ -1,0 +1,175 @@
+.Book a {
+    text-decoration: none;
+    color: black;
+}
+
+.Book .book-cover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    height: 450px;
+}
+
+.Book {
+    width: 20%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    margin: 0 0.5rem 2rem 0.5rem;
+}
+
+.Book .book-name {
+    font-size: 1.25rem;
+    margin: 1rem 1rem 0 1rem;
+    height: 60px;
+    transition: color 200ms;
+}
+
+.Book .book-name:hover {
+    color: rgba(0, 119, 255, 0.76);
+}
+
+.Book .book-price {
+    color: red;
+    font-size: 1.25rem;
+    user-select: none;
+}
+
+.Book .cart-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.Book .cart-wrapper button {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.3rem;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    transition: all 200ms;
+    user-select: none;
+}
+
+.Book .cart-wrapper button:active {
+    transform: scale(1.04);
+}
+
+@media screen and (min-width: 769px) {
+    .Book .cart-wrapper button:hover {
+        background-color: #c42030;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Book {
+        width: 30%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+    }
+
+    .Book .book-cover {
+        min-height: 500px;
+    }
+
+    .Book .book-name {
+        font-size: 1.25rem;
+        margin: 1rem 1rem 0 1rem;
+        height: 60px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Book {
+        width: 30%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 400px;
+    }
+
+    .Book .book-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem 0 1rem;
+        height: 50px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Book {
+        width: 45%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 360px;
+    }
+
+    .Book .book-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem 0 1rem;
+        height: 50px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .Book {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        margin: 0 0.5rem 2rem 0.5rem;
+    }
+
+    .Book .book-cover {
+        min-height: 500px;
+    }
+
+    .Book .book-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 2rem 0 1rem;
+        height: 50px;
+    }
+
+    .Book .book-price {
+        color: red;
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes addToCardHover {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

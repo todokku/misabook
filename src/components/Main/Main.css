@@ -1,0 +1,9 @@
+.Main {
+    min-height: 80.8vh;
+}
+
+@media screen and (max-width: 480px) {
+    .Main {
+        min-height: 75.5vh;
+    }
+}

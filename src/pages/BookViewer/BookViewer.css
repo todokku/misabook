@@ -1,0 +1,165 @@
+.BookViewer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 25%;
+}
+
+.BookViewer .container {
+    display: flex;
+    margin: 2rem 0 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.BookViewer .container .cover {
+    width: 50%;
+}
+
+.BookViewer .container .cover img {
+    width: 100%;
+}
+
+.BookViewer .container .infor {
+    margin-left: 2rem;
+    width: 50%;
+}
+
+.BookViewer h3 {
+    margin: 0;
+}
+
+.BookViewer .container .title {
+    color: #313131;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.BookViewer .container .author {
+    color: #331111bb;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.BookViewer .container .price {
+    color: red;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+}
+
+.BookViewer ul {
+    margin-bottom: 3rem;
+}
+
+.BookViewer li {
+    margin: 0.25rem 0;
+}
+
+.BookViewer .btn-add-to-cart {
+    cursor: pointer;
+    color: white;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    border-radius: 0.25rem;
+    outline: none;
+    padding: 0.75rem 0rem;
+    width: 100%;
+    font-size: 0.9rem;
+    user-select: none;
+    transition: all 200ms;
+}
+
+.BookViewer .btn-add-to-cart:active {
+    transform: scale(1.03);
+}
+
+.BookViewer .description {
+    font-size: 1.4rem;
+}
+
+.BookViewer p {
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .BookViewer {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .BookViewer {
+        padding: 0 10%;
+    }
+
+    .BookViewer .btn-add-to-cart {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .BookViewer {
+        padding: 0 5%;
+    }
+
+    .BookViewer .container .author {
+        margin-bottom: 1rem;
+    }
+
+    .BookViewer .container .price {
+        margin-bottom: 1rem;
+    }
+
+    .BookViewer .container .cover img {
+        width: 100%;
+    }
+
+    .BookViewer .cover {
+        width: 50%;
+    }
+
+    .BookViewer .infor {
+        width: 50%;
+    }
+
+    .BookViewer ul {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .BookViewer {
+        padding: 0 1rem;
+    }
+
+    .BookViewer .container {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    .BookViewer .cover {
+        width: 100%!important;
+    }
+
+    .BookViewer .infor {
+        width: 100%!important;
+        margin: 0!important;
+    }
+
+    .BookViewer .title {
+        font-size: 1.5rem!important;
+        margin-top: 1rem;
+    }
+
+    .BookViewer p {
+        line-height: 1.5;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .BookViewer .btn-add-to-cart:hover {
+        background-color: #bd1425;
+    }
+
+    
+}

@@ -1,0 +1,165 @@
+.Header {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 6;
+    background-color: white;
+}
+
+.Header a {
+    text-decoration: none;
+    color: #313131;
+    transition: color 200ms;
+    user-select: none;
+}
+
+.Header a:hover {
+    color: rgba(0, 119, 255, 0.76);
+}
+
+.Header #burger {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    cursor: pointer;
+    display: none;
+}
+
+.Header #line-1, .Header #line-2, .Header #line-3 {
+    height: 2px;
+    width: 22px;
+    background-color: black;
+    margin: 2px 0;
+    transition: all 200ms;
+    border-radius: 10px;
+}
+
+.Header .burger-clicked #line-1 {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.Header .burger-clicked #line-2 {
+    opacity: 0;
+}
+
+.Header .burger-clicked #line-3 {
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.Header #logo-wrapper {
+    flex-grow: 1;
+    padding-left: 1rem;
+}
+
+.Header .logo-wrapper-logged-out {
+    justify-content: center;
+    padding: 0!important;
+    text-align: center;
+}
+
+.Header #logo-image {
+    width: 12vh;
+}
+
+.Header #nav-links {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    justify-content: center;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0;
+}
+
+.Header .nav-link {
+    width: 25%;
+    text-align: center;
+}
+
+.Header #function-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.Header #cart-wrapper {
+    position: relative;
+}
+
+.Header #cart {
+    font-size: 1.9rem;
+}
+
+.Header #cart-count {
+    min-width: 1rem;
+    height: 1rem;
+    background-color: red;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    user-select: none;
+}
+
+.Header #user {
+    font-size: 1.9rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: color 200ms;
+}
+
+.Header #user:hover {
+    color: rgba(0, 119, 255, 0.76);
+}
+
+@media screen and (max-width: 768px) {
+    .Header {
+       padding: 0;
+    }
+
+    .Header #nav-links {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: white;
+        z-index: 3;
+        position: absolute;
+        height: 87.8vh;
+        width: 100vw;
+        flex-direction: column;
+        top: 12vh;
+        justify-content: flex-start;
+        margin: 0;
+        right: 0;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 400ms;
+    }
+
+    .Header .nav-links-showed {
+        transform: translateX(0%)!important;
+    }
+
+    .Header .nav-link {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+    }
+
+    .Header #burger {
+        display: flex;
+    }
+}

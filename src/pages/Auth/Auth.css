@@ -1,0 +1,34 @@
+.Auth {
+    height: 80.84vh;
+    display: flex;
+    position: relative;
+}
+
+.Auth #cover {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.Auth #content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-height: 680px) {
+    .Auth {
+        min-height: 550px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Auth {
+        height: 77.5vh;
+    }
+}
