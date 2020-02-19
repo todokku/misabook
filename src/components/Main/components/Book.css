@@ -55,12 +55,18 @@
     cursor: pointer;
     display: flex;
     outline: none;
-    transition: background-color 200ms;
+    transition: all 200ms;
     user-select: none;
 }
 
-.Book .cart-wrapper button:hover {
-    background-color: #c42030;
+.Book .cart-wrapper button:active {
+    transform: scale(1.04);
+}
+
+@media screen and (min-width: 769px) {
+    .Book .cart-wrapper button:hover {
+        background-color: #c42030;
+    }
 }
 
 @media screen and (max-width: 1200px) {

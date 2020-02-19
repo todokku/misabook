@@ -12,7 +12,7 @@ import Main from './components/Main/Main';
 
 import './App.css';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'http://192.168.1.143:5000';
 
 const App = () => {
   return (

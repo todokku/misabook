@@ -58,7 +58,7 @@ const Books = () => {
                 </select>
                 <select name="sort" id="sort" onChange={updateSort}>
                     <option value="1">Ascending</option>
-                    <option value="-1">Decrease</option>
+                    <option value="-1">Decreasing</option>
                 </select>
             </div>
             <div className='content'>
