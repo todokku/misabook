@@ -161,6 +161,7 @@
 }
 
 @media screen and (min-width: 769px) {
+    /* Disable on mobile */
     .Header a:hover {
         color: rgba(0, 119, 255, 0.76);
     }
