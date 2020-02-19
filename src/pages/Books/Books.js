@@ -34,10 +34,12 @@ const Books = () => {
 
     const updateField = (e) => {
         setField(e.target.value);
+        setBooks([]);
     }
     
     const updateSort = (e) => {
         setSort(e.target.value);
+        setBooks([]);
     }
 
     const loadMore = () => {

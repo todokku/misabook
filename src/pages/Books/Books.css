@@ -63,12 +63,6 @@
     transition: all 200ms;
 }
 
-.Books .load-more button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: 1px solid transparent;
-}
-
 @media screen and (max-width: 1200px) {
     .Books .books-selector {
         margin-right: 3.5%;
@@ -111,4 +105,12 @@
         border-radius: 0.25rem;
         margin-bottom: 2rem;
     }    
+}
+
+@media screen and (min-width: 769px) {
+    .Books .load-more button:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 1px solid transparent;
+    }
 }
