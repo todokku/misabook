@@ -66,4 +66,15 @@ const booksPagination = async (req, res) => {
         res.send({ message: 'Params is invalid' });
 }
 
-module.exports = { getAllBooks, insertBooks, bestSeller, booksPagination }
+const viewBook = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const book = await Book.find({ _id: id })
+        res.send(book);
+    }
+    catch(error) {
+        res.send({ message: error });
+    }
+}
+
+module.exports = { getAllBooks, insertBooks, bestSeller, booksPagination, viewBook }
