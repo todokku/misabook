@@ -6,7 +6,7 @@ import './Book.css';
 const Book = (props) => {
     return (
         <div className='Book'>
-            <Link className='book-cover-link' to={`/book/${props.book._id}`}
+            <Link className='book-cover-link' to={`/books/${props.book._id}`}
                 
             >
                 <div className='book-cover'
@@ -15,7 +15,7 @@ const Book = (props) => {
                 </div>
             </Link>
             <div className='book-infor'>
-                <Link to={`/book/${props.book._id}`} >
+                <Link to={`/books/${props.book._id}`} >
                     <h5 className='book-name'>{props.book.name}</h5>
                 </Link>
                 <div className='cart-wrapper'>
