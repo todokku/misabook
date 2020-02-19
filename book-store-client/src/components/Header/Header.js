@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import classnames from 'classnames';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -25,6 +25,7 @@ const Header = (props) => {
 
     const logout = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('items');
         setToken('');
         props.history.push('/auth');
     }
@@ -36,7 +37,7 @@ const Header = (props) => {
                     'logo-wrapper-logged-out': token === ''
                 })}
             >
-                <Link to='/'>
+                <Link onClick={closeMenu} to='/'>
                     <img id='logo-image' src={logo} alt="logo"/>
                 </Link>
             </div>
@@ -62,7 +63,7 @@ const Header = (props) => {
             }
             {token !== '' &&
                 <div id='function-wrapper'>
-                    <Link to='/cart' id='cart-wrapper'>
+                    <Link onClick={closeMenu} to='/cart' id='cart-wrapper'>
                         <i id='cart' className="material-icons">shopping_cart</i>
                         <div id='cart-count'>{items[0].length}</div>
                     </Link>

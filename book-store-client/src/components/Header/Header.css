@@ -16,10 +16,6 @@
     user-select: none;
 }
 
-.Header a:hover {
-    color: rgba(0, 119, 255, 0.76);
-}
-
 .Header #burger {
     flex-direction: column;
     justify-content: center;
@@ -161,5 +157,11 @@
 
     .Header #burger {
         display: flex;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .Header a:hover {
+        color: rgba(0, 119, 255, 0.76);
     }
 }
