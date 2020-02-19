@@ -1,5 +1,12 @@
 .Contact {
     display: flex;
+    justify-content: center;
+    background-image: url('https://res.cloudinary.com/dumfvnj9f/image/upload/v1582139210/bookstore/contact-background_tp2hby.png');
+    min-height: 80.8vh;
+}
+
+.Contact .content {
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
@@ -7,13 +14,15 @@
 
 .Contact .title {
     font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .Contact form {
     width: 300px;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .Contact .form-control {
@@ -25,6 +34,7 @@
 .Contact .form-control label {
     margin-bottom: 0.5rem;
     margin-left: 0.25rem;
+    color: rgba(255, 255, 255, 0.9);;
 }
 
 .Contact .form-control input, textarea {
@@ -36,16 +46,36 @@
     font-family: 'Quicksand', sans-serif;
     color: rgba(0, 0, 0, 0.6);
     outline: none;
+    background-color: rgba(255, 255, 255, 0.9);;
 }
 
 .Contact form button {
     margin-top: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-radius: 1rem;
     color: white;
-    background-color: rgba(0, 119, 255, 0.76);
-    border: 1px solid rgba(0, 119, 255, 0.76);
+    background-color: #28a745;
+    border: 1px solid #28a745;
     font-size: 0.9rem;
     align-self: center;
     width: 100%;
+    cursor: pointer;
+    outline: none;
+    transition: all 200ms;
+}
+
+.Contact form button:active {
+    transform: scale(1.03);
+}
+
+@media screen and (min-width: 769px) {
+    .Contact form button:hover {
+        background-color: #16c23e;
+    }
+}
+
+@media screen and (max-height: 480px) {
+    .Contact {
+        min-height: 77.5vh;
+    }
 }

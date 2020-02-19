@@ -26,28 +26,30 @@ const Contact = () => {
 
     return (
         <div className='Contact'>
-            <h3 className='title'>Contact</h3>
-            <form>
-                <div className="form-control">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id='name' placeholder='name...' required
-                        onChange={updateName}
-                    />
-                </div>
-                <div className="form-control">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id='email' placeholder='email...' required
-                        onChange={updateEmail}
-                    />
-                </div>
-                <div className="form-control">
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required
-                        onChange={updateMessage}
-                    ></textarea>
-                </div>
-                <button>Send</button>
-            </form>
+            <div className='content'>
+                <h3 className='title'>Contact</h3>
+                <form>
+                    <div className="form-control">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" id='name' placeholder='name...' required
+                            onChange={updateName}
+                        />
+                    </div>
+                    <div className="form-control">
+                        <label htmlFor="email">Email</label>
+                        <input type="text" id='email' placeholder='email...' required
+                            onChange={updateEmail}
+                        />
+                    </div>
+                    <div className="form-control">
+                        <label htmlFor="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10" required
+                            onChange={updateMessage}
+                        ></textarea>
+                    </div>
+                    <button>Send</button>
+                </form>
+            </div>
         </div>
     );
 }
