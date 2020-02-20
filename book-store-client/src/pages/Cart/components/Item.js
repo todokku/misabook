@@ -15,16 +15,47 @@ const Item = (props) => {
         removeFromCart(props.book._id);
     }
 
-    const decrease = () => {
+    const findIndex = () => {
+        return new Promise((resolve, reject) => {
+            let _order = props.order;
+            for (let i = 0; i < _order.length; i++) {
+                if (_order[i].id === props.book._id) {
+                    resolve(i);
+                }
+            }
+        })
+    }
+
+    const decrease = async () => {
         if (amount > 1) {
             setAmount(amount - 1);
             props.setTotal(props.total - props.book.price);
+            findIndex()
+            .then(index => {
+                let _order = props.order;
+                const preAmount = _order[index].amount;
+                _order.splice(index, 1, {
+                    amount: preAmount - 1,
+                    id: props.book._id
+                });
+                props.setOrder(_order);
+            })
         }
     }
 
-    const increase = () => {
+    const increase = async () => {
         setAmount(amount + 1);
         props.setTotal(props.total + props.book.price);
+        findIndex()
+        .then(index => {
+            let _order = props.order;
+            const preAmount = _order[index].amount;
+            _order.splice(index, 1, {
+                amount: preAmount + 1,
+                id: props.book._id
+            });
+            props.setOrder(_order);
+        })
     }
 
     
