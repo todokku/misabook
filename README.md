@@ -36,5 +36,18 @@ yarn install
 yarn start
 ```
 
+## API
+
+```bash
+# Get all the books
+GET http://localhost:PORT/books
+# Post one or many books
+http://localhost:PORT/books
+# Get all the orders
+http://localhost:PORT/orders
+# Get all the message
+http://localhost:PORT/message
+```
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
