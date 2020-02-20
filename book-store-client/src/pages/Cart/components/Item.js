@@ -10,27 +10,29 @@ const Item = (props) => {
 
     const [amount, setAmount] = useState(1);
 
+    const deleteItem = async () => {
+        await props.setTotal(props.total - props.book.price * amount);
+        removeFromCart(props.book._id);
+    }
+
     const decrease = () => {
         if (amount > 1) {
             setAmount(amount - 1);
+            props.setTotal(props.total - props.book.price);
         }
     }
 
     const increase = () => {
         setAmount(amount + 1);
+        props.setTotal(props.total + props.book.price);
     }
 
-    useEffect(() => {
-        
-    }, [amount])
     
     return (
         <div className='Item'>
             <div className='item-header'>
                 <Link to={`/books/${props.book._id}`} className='book-title'>{props.book.name}</Link>
-                <div className='delete-btn' onClick={() => {
-                    removeFromCart(props.book._id)
-                }}>
+                <div className='delete-btn' onClick={deleteItem}>
                     <i className="material-icons">delete_outline</i>
                 </div>
             </div>

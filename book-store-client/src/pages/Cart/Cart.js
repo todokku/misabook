@@ -28,6 +28,11 @@ const Cart = () => {
             .then(res => {
                 if (!res.data.message) {
                     setBooks(res.data);
+                    let _total = 0
+                    for (let i = 0; i < res.data.length; i++) {
+                        _total += res.data[i].price;
+                    }
+                    setTotal(_total)
                 }
             })
         }
@@ -38,7 +43,12 @@ const Cart = () => {
             <h3 className='title'>Cart</h3>
             <div className='container'>
                 {books.map(book => (
-                    <Item book={book} total={total} key={book._id} />
+                    <Item
+                        book={book}
+                        total={total}
+                        setTotal={setTotal}
+                        key={book._id}
+                    />
                 ))}
                 <div className='total'>Total: {total} $</div>
             </div>
