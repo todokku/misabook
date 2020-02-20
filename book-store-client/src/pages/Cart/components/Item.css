@@ -1,0 +1,119 @@
+.Item {
+    margin-bottom: 2rem;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.Item a {
+    text-decoration: none;
+    transition: all 200ms;
+}
+
+.Item a:hover {
+    color: rgba(0, 119, 255, 0.76);
+}
+
+.Item .item-header {
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+    padding: 1rem 1rem;
+}
+
+.Item .book-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #313131;
+}
+
+.Item .item-header i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.Item .item-header i:hover {
+    color: rgba(0, 119, 255, 0.76);
+}
+
+.Item .book-cover {
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+}
+
+.Item .infor-item {
+    display: flex;
+    padding: 1rem;
+    padding-top: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Item .book-cover img {
+    width: 100%;
+}
+
+.Item .amount {
+    font-size: 1.2rem;
+    display: flex;
+    padding: 0!important;
+    border: none;
+}
+
+.Item .a, .d {
+    transition: all 200ms;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.Item .a:active, .d:active {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.Item .d {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: none;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+
+.Item .a {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: none;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.Item .number {
+    padding: 0.5rem 0;
+    width: 3rem;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Item .money {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 363px) {
+    .Item .infor-item {
+        padding: 0.5rem;
+    }
+
+    .Item .a, .d {
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .Item .a:hover, .d:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}

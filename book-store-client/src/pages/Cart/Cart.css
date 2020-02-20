@@ -7,3 +7,36 @@
 .Cart .title {
     font-size: 2rem;
 }
+
+.Cart .container {
+    width: 50%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Cart .total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: red;
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 1200px) {
+    .Cart .container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Cart .container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Cart .container {
+        width: 93%;
+        
+    }
+}

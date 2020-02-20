@@ -12,7 +12,8 @@ const Cart = () => {
     // eslint-disable-next-line
     const [token, setToken] = useContext(AuthContext);
     const { items } = useContext(CartContext);
-    
+
+    const [total, setTotal] = useState(0);
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
@@ -37,8 +38,9 @@ const Cart = () => {
             <h3 className='title'>Cart</h3>
             <div className='container'>
                 {books.map(book => (
-                    <Item book={book} key={book._id} />
+                    <Item book={book} total={total} key={book._id} />
                 ))}
+                <div className='total'>Total: {total} $</div>
             </div>
         </div>
     );
