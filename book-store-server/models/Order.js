@@ -13,7 +13,7 @@ const orderSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    order: {
+    items: {
         type: Object,
         required: true
     }
