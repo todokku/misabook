@@ -39,8 +39,10 @@ const tokenVerify = require('./middlewares/tokenVerify');
 const authRoute = require('./routes/auth');
 const bookRoute = require('./routes/book');
 const messageRoute = require('./routes/message');
+const orderRoute = require('./routes/order');
 
 // Routes
 app.use('/auth', authRoute)
 app.use('/books', tokenVerify, bookRoute);
 app.use('/message', tokenVerify, messageRoute);
+app.use('/orders', tokenVerify, orderRoute);

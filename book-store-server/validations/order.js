@@ -5,7 +5,7 @@ const orderValidation = (data) => {
         name: joi.string().required(),
         'phone-number': joi.string().required(),
         address: joi.string().required(),
-        items: joi.object().required
+        items: joi.array().required()
     });
     
     return schema.validate(data);
