@@ -39,6 +39,7 @@ $ yarn start
 ## API
 
 ```bash
+#--- Require token in header ---
 # Get all the books
 GET http://localhost:PORT/books
 # Post one or many books
