@@ -10,11 +10,6 @@ const Item = (props) => {
 
     const [amount, setAmount] = useState(1);
 
-    const deleteItem = async () => {
-        await props.setTotal(props.total - props.book.price * amount);
-        removeFromCart(props.book._id);
-    }
-
     const findIndex = () => {
         return new Promise((resolve, reject) => {
             let _order = props.order;
@@ -24,6 +19,17 @@ const Item = (props) => {
                 }
             }
         })
+    }
+
+    const deleteItem = async () => {
+        await props.setTotal(props.total - props.book.price * amount);
+        await findIndex()
+        .then(index => {
+            let _order = props.order;
+            _order.splice(index, 1)
+            props.setOrder(_order);
+        })
+        removeFromCart(props.book._id);
     }
 
     const decrease = async () => {
