@@ -32,6 +32,9 @@ const Auth = () => {
                     setIsLogined(false);
             })
         }
+	else {
+            setIsLogined(false);
+        }
     }, []);
 
     if (isLogined === undefined) {
