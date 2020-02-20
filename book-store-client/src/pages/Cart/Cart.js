@@ -18,12 +18,12 @@ const Cart = (props) => {
     
     const [total, setTotal] = useState(0);
     const [books, setBooks] = useState([]);
-    const [submitShowed, setSubmitShowed] = useState(true);
+    const [submitShowed, setSubmitShowed] = useState(false);
 
     const [order, setOrder] = useState([]);
 
     const nameRegex = /^.{3,}$/; // Minium 3 characters
-    const vnPhoneNumberRegex = /(09|01[2|6|8|9])+([0-9]{8})\b/;
+    const vnPhoneNumberRegex = /0\d{9}/;
 
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -31,8 +31,6 @@ const Cart = (props) => {
 
     const [nameError, setNameError] = useState(false);
     const [phoneNumberError, setPhoneNumberError] = useState(false);
-
-    const [success, setSuccess] = useState(false);
 
     const updateName = (e) => {
         setName(e.target.value);
@@ -99,7 +97,8 @@ const Cart = (props) => {
             axios.post('/orders', {
                 name: name,
                 phoneNumber: phoneNumber,
-                address: address
+                address: address,
+                items: order
             }, {
                 headers: {
                     token: token
@@ -110,17 +109,13 @@ const Cart = (props) => {
                     setName('');
                     setPhoneNumber('');
                     setAddress('');
+                    localStorage.removeItem('items');
                     setOrder([]);
                     setBooks([]);
-                    localStorage.removeItem('items');
-                    setSuccess(true);
+                    items[1]([]);
                 }
             })
         }
-    }
-
-    const goHome = () => {
-        props.history.push('/');
     }
 
     return (
@@ -150,36 +145,36 @@ const Cart = (props) => {
                     </div>
                 )}
             </div>
-            <div className={classnames('submit-form', {
-                'submit-form-showed': submitShowed
-            })}>
-                <h3 className='title'>Submit</h3>
-                <form onSubmit={submit}>
-                    <div className="form-control">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id='name' placeholder='name...' required
-                            onChange={updateName}
-                        />
-                        <div className={classnames('errors', {
-                            'errors-showed': nameError
-                        })}>Name is invalid</div>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="phone-number">Phone number</label>
-                        <input type="text" id='phone-number' placeholder='phone number...' required
-                            onChange={updatePhoneNumber}
-                        />
-                        <div className={classnames('errors', {
-                            'errors-showed': phoneNumberError
-                        })}>Phone number is invalid</div>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="address">Address</label>
-                        <input type="text" id='address' placeholder='address...' required
-                            onChange={updateAddress}
-                        />
-                    </div>
-                    {!success && (
+            {items[0].length > 0 && (
+                <div className={classnames('submit-form', {
+                    'submit-form-showed': submitShowed
+                })}>
+                    <h3 className='title'>Submit</h3>
+                    <form onSubmit={submit}>
+                        <div className="form-control">
+                            <label htmlFor="name">Name</label>
+                            <input type="text" id='name' placeholder='name...' required
+                                onChange={updateName}
+                            />
+                            <div className={classnames('errors', {
+                                'errors-showed': nameError
+                            })}>Name is invalid</div>
+                        </div>
+                        <div className="form-control">
+                            <label htmlFor="phone-number">Phone number</label>
+                            <input type="text" id='phone-number' placeholder='phone number...' required
+                                onChange={updatePhoneNumber}
+                            />
+                            <div className={classnames('errors', {
+                                'errors-showed': phoneNumberError
+                            })}>Phone number is invalid</div>
+                        </div>
+                        <div className="form-control">
+                            <label htmlFor="address">Address</label>
+                            <input type="text" id='address' placeholder='address...' required
+                                onChange={updateAddress}
+                            />
+                        </div>
                         <div>
                             <button>Submit</button>
                             <div className='go-back' onClick={showSubmit}>
@@ -187,17 +182,9 @@ const Cart = (props) => {
                                 Go back
                             </div>
                         </div>
-                    )}
-                </form>
-                {success && (
-                    <div className='success-wrapper'>
-                        <div className='go-home' onClick={goHome}>
-                            <i className="material-icons">arrow_back</i>&nbsp;
-                            Successfully! Go home
-                        </div>
-                    </div>
-                )}
-            </div>
+                    </form>
+                </div>
+            )}
             {items[0].length === 0 && (
                 <div className='empty'>
                     <img src={empty} alt="empty"/>

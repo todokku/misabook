@@ -156,25 +156,6 @@
     font-size: 0.8rem;
 }
 
-.Cart .success-wrapper {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-right: 0!important;
-}
-
-.Cart .go-home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    margin-top: 1rem;
-    color: #28a745;
-    cursor: pointer;
-    user-select: none;
-}
-
 @media screen and (max-width: 1200px) {
     .Cart .container {
         width: 60%;
