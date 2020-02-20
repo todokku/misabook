@@ -1,6 +1,17 @@
 const Message = require('../models/Message');
 const messageValidation = require('../validations/message');
 
+// Get all the messages
+const getAllMessages = async (req, res) => {
+    try {
+        const messages = await Message.find({});
+        res.send(messages);
+    }
+    catch(error) {
+        res.send({ message: error });
+    }
+}
+
 // Insert one or many books into the database
 const saveMessage = async (req, res) => {
     const newMessage = req.body;
@@ -23,4 +34,4 @@ const saveMessage = async (req, res) => {
     }
 }
 
-module.exports = { saveMessage }
+module.exports = { saveMessage, getAllMessages }
