@@ -45,7 +45,7 @@ GET http://localhost:PORT/books
 http://localhost:PORT/books
 # Get all the orders
 http://localhost:PORT/orders
-# Get all the message
+# Get all the messages
 http://localhost:PORT/message
 ```
 
