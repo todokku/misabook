@@ -18,22 +18,22 @@ $ git clone https://github.com/misa198/misabook.git
 ## Usage
 
 ```bash
-cd misabook
+$ cd misabook
 
 # Server
 # Create database by mongodb
 # Add file .env includes
 # PORT, MONGO_URL, TOKEN_SECRET, PER_PAGE
-cd book-store-server
-yarn install
-yarn dev # Run with nodemon
-yarn start # node index.js
+$ cd book-store-server
+$ yarn install
+$ yarn dev # Run with nodemon
+$ yarn start # node index.js
 
 # Client
 # Change axios base url folowing the port on server
-cd book-store-client
-yarn install
-yarn start
+$ cd book-store-client
+$ yarn install
+$ yarn start
 ```
 
 ## API
